@@ -379,7 +379,7 @@ AR Path="/6579482E/6585022A" Ref="V?"  Part="1"
 AR Path="/6585022A" Ref="V1"  Part="1" 
 F 0 "V1" H 15288 9751 50  0000 L CNN
 F 1 "LOGO" H 15288 9660 50  0000 L CNN
-F 2 "" H 15210 9705 50  0001 C CNN
+F 2 "Plus42Wire:Logo" H 15210 9705 50  0001 C CNN
 F 3 "" H 15210 9705 50  0001 C CNN
 F 4 "-" H 15210 9705 50  0001 C CNN "MouserPN"
 F 5 "" H 15210 9705 50  0001 C CNN "Notes"
@@ -1326,15 +1326,15 @@ L Connector:Conn_01x04_Male CN4
 U 1 1 66FF85AA
 P 13840 4490
 F 0 "CN4" H 13812 4372 50  0000 R CNN
-F 1 "CONN_I2C_5V" H 13812 4463 50  0000 R CNN
+F 1 "CONN_I2C_5V_ALT" H 13812 4463 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 13840 4490 50  0001 C CNN
 F 3 "~" H 13840 4490 50  0001 C CNN
 	1    13840 4490
 	1    0    0    1   
 $EndComp
-Text Label 14365 4390 2    50   ~ 0
-sda
 Text Label 14365 4290 2    50   ~ 0
+sda
+Text Label 14365 4390 2    50   ~ 0
 scl
 Wire Wire Line
 	14040 4390 14365 4390
@@ -1342,23 +1342,17 @@ Wire Wire Line
 	14040 4290 14365 4290
 Wire Wire Line
 	14040 4590 14125 4590
-Wire Wire Line
-	14125 4590 14125 4690
 $Comp
 L power:GND #PWR022
 U 1 1 66FF8A88
-P 14125 4690
-F 0 "#PWR022" H 14125 4440 50  0001 C CNN
-F 1 "GND" H 14130 4517 50  0000 C CNN
-F 2 "" H 14125 4690 50  0001 C CNN
-F 3 "" H 14125 4690 50  0001 C CNN
-	1    14125 4690
+P 14225 4690
+F 0 "#PWR022" H 14225 4440 50  0001 C CNN
+F 1 "GND" H 14230 4517 50  0000 C CNN
+F 2 "" H 14225 4690 50  0001 C CNN
+F 3 "" H 14225 4690 50  0001 C CNN
+	1    14225 4690
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	14040 4490 14125 4490
-Wire Wire Line
-	14125 4490 14125 4170
 $Comp
 L power:+5V #PWR021
 U 1 1 66FF8A94
@@ -1543,7 +1537,7 @@ U 1 1 67315DE6
 P 4400 9320
 F 0 "C10" H 4515 9366 50  0000 L CNN
 F 1 "10u" H 4515 9275 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" H 4400 9320 50  0001 C CNN
+F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm" H 4400 9320 50  0001 C CNN
 F 3 "~" H 4400 9320 50  0001 C CNN
 F 4 "710-860020573008" H 4400 9320 50  0001 C CNN "MouserPN"
 F 5 "" H 4400 9320 50  0001 C CNN "Notes"
@@ -1798,7 +1792,7 @@ L Connector:Conn_01x04_Male CN7
 U 1 1 6753BFB8
 P 13840 8005
 F 0 "CN7" H 13812 7887 50  0000 R CNN
-F 1 "CONN_I2C_3V3" H 13812 7978 50  0000 R CNN
+F 1 "CONN_I2C_3V3_ALT" H 13812 7978 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 13840 8005 50  0001 C CNN
 F 3 "~" H 13840 8005 50  0001 C CNN
 	1    13840 8005
@@ -1810,23 +1804,17 @@ Wire Wire Line
 	14040 7805 14490 7805
 Wire Wire Line
 	14040 8105 14125 8105
-Wire Wire Line
-	14125 8105 14125 8205
 $Comp
 L power:GND #PWR034
 U 1 1 6753BFC8
-P 14125 8205
-F 0 "#PWR034" H 14125 7955 50  0001 C CNN
-F 1 "GND" H 14130 8032 50  0000 C CNN
-F 2 "" H 14125 8205 50  0001 C CNN
-F 3 "" H 14125 8205 50  0001 C CNN
-	1    14125 8205
+P 14225 8205
+F 0 "#PWR034" H 14225 7955 50  0001 C CNN
+F 1 "GND" H 14230 8032 50  0000 C CNN
+F 2 "" H 14225 8205 50  0001 C CNN
+F 3 "" H 14225 8205 50  0001 C CNN
+	1    14225 8205
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	14040 8005 14125 8005
-Wire Wire Line
-	14125 8005 14125 7685
 Wire Wire Line
 	14040 5570 14490 5570
 Text Label 8420 9130 2    50   ~ 0
@@ -1839,9 +1827,9 @@ Text Label 14490 6680 2    50   ~ 0
 scl_3v3
 Text Label 14490 6780 2    50   ~ 0
 sda_3v3
-Text Label 14490 7805 2    50   ~ 0
-scl_3v3
 Text Label 14490 7905 2    50   ~ 0
+scl_3v3
+Text Label 14490 7805 2    50   ~ 0
 sda_3v3
 $Comp
 L power:+3.3V #PWR033
@@ -1888,6 +1876,24 @@ F 4 "579-MCP1700-3302E/TO" H 3330 9060 50  0001 C CNN "MouserPN"
 	1    3330 9060
 	1    0    0    1   
 $EndComp
+Text Notes 2740 10440 0    50   ~ 0
+If you want to use a different\nregulator, check the pinout!!!\nMCP1700 is cool since it can\nprovide up to 250 mA, but it\nuses a different pinout than\nmost alternatives!
+Wire Wire Line
+	14225 4490 14225 4690
+Wire Wire Line
+	14040 4490 14225 4490
+Wire Wire Line
+	14125 4170 14125 4590
+Text Notes 14585 4510 0    50   ~ 0
+*** WARNING! ***\nDIFFERENT\nPINOUT!
+Text Notes 14630 8055 0    50   ~ 0
+*** WARNING! ***\nDIFFERENT\nPINOUT!
+Wire Wire Line
+	14225 8005 14225 8205
+Wire Wire Line
+	14040 8005 14225 8005
+Wire Wire Line
+	14125 7685 14125 8105
 Wire Bus Line
 	7835 1875 7835 3615
 Wire Bus Line
@@ -1896,6 +1902,4 @@ Wire Bus Line
 	9555 2340 9555 3040
 Wire Bus Line
 	5635 1670 5635 3615
-Text Notes 2740 10440 0    50   ~ 0
-If you want to use a different\nregulator, check the pinout!!!\nMCP1700 is cool since it can\nprovide up to 250 mA, but it\nuses a different pinout than\nmost alternatives!
 $EndSCHEMATC
