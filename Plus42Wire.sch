@@ -1657,8 +1657,6 @@ $EndComp
 Wire Wire Line
 	7370 9475 7825 9475
 Connection ~ 7825 9475
-Wire Wire Line
-	7825 9475 8420 9475
 $Comp
 L Device:R R5
 U 1 1 6741AB59
@@ -1684,8 +1682,6 @@ Wire Wire Line
 Connection ~ 7500 8730
 Wire Wire Line
 	7825 9070 7825 9475
-Wire Wire Line
-	7500 8730 7825 8730
 Wire Wire Line
 	7825 8770 7825 8730
 $Comp
@@ -1894,6 +1890,50 @@ Wire Wire Line
 	14040 8005 14225 8005
 Wire Wire Line
 	14125 7685 14125 8105
+Wire Wire Line
+	8620 8730 8620 8830
+Text Label 9545 9130 2    50   ~ 0
+scl
+Wire Wire Line
+	9220 9475 9545 9475
+Wire Wire Line
+	7500 8730 7825 8730
+Connection ~ 7825 8730
+$Comp
+L Device:Q_NMOS_SDG Q101
+U 1 1 670206AA
+P 8620 9030
+F 0 "Q101" V 8869 9030 50  0000 C CNN
+F 1 "BSS88" V 8960 9030 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-92L_HandSolder" H 8820 9130 50  0001 C CNN
+F 3 "~" H 8620 9030 50  0001 C CNN
+	1    8620 9030
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Q_NMOS_SDG Q102
+U 1 1 6709143B
+P 9020 9375
+F 0 "Q102" V 9269 9375 50  0000 C CNN
+F 1 "BSS88" V 9360 9375 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-92L_HandSolder" H 9220 9475 50  0001 C CNN
+F 3 "~" H 9020 9375 50  0001 C CNN
+	1    9020 9375
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9020 9175 9020 8730
+Wire Wire Line
+	7825 8730 8620 8730
+Connection ~ 8620 8730
+Text Label 9545 9475 2    50   ~ 0
+sda
+Wire Wire Line
+	9545 9130 8820 9130
+Wire Wire Line
+	7825 9475 8820 9475
+Wire Wire Line
+	8620 8730 9020 8730
 Wire Bus Line
 	7835 1875 7835 3615
 Wire Bus Line
