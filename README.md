@@ -15,11 +15,13 @@ The PCF8584 and all the other chips can all be bought supercheap on AliExpress &
 
 Be careful with the Q1/Q2 MOSFETs: these **MUST** be TN2106, get them from a reputable supplier. You can skip them if you are only interested in the 5V bus.
 
-JP1 connects the PCF8584 IRQ signal to the system IRQ signal: these two work differently so you **MUST** leave this jumper open. It is only provided for experimentation.
+JP1 sets the EEPROM to read-only mode when closed.
 
-JP2 grounds pin 1 of the oscillator: most oscillators don't need this, so leave it open unless the datasheet of your oscillatos says differently.
+JP2 grounds pin 1 of the oscillator: most oscillators don't need this, so leave it open unless the datasheet of your oscillator says differently.
 
 JP3/4/5 control the I<sup>2</sup>C address of the built-in EEPROM: most EEPROMs respond to 0x50 by default, but this address can be altered through these jumpers. Set them all to 0 to use the default.
+
+JP6 connects the PCF8584 IRQ signal to the system IRQ signal: these two work differently so you **MUST** leave this jumper open. It is only provided for experimentation.
 
 The battery is only needed by the RTC so that it keeps time while the board is unplugged. Speaking of the RTC, be careful if you get these from China as some of them just don't work at all.
 
