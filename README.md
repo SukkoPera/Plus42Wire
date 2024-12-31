@@ -1,5 +1,5 @@
 # Plus42Wire
-Plus42Wire is an I<sup>2</sup>C (Inter-Integrated Circuit, sometimes known as *2-Wire*) Interface for the Commodore 16, 116 and Plus/4.
+Plus42Wire is an I<sup>2</sup>C (Inter-Integrated Circuit, sometimes known as *2-Wire*) interface for the Commodore 16, 116 and Plus/4.
 
 ![Board](https://raw.githubusercontent.com/SukkoPera/Plus42Wire/master/img/render-top.png)
 
@@ -8,14 +8,14 @@ I<sup>2</sup>C is a standard bus that is widely used for attaching lower-speed p
 
 Plus42Wire is based on the PCF8584 chips by Philips/NXP, featuring both master and slave capabilities and communication speeds up to 90 kHz.
 
-The board features both 5V and 3.3V bus connectors with different pinouts for maximum compatibility with devices and has built-in slots for an EEPROM and a Real-Time Clock (RTC). Address decoding is performed by a GAL for easy reconfigurability (both GAL20 and GAL22 are supported).
+The board features both 5V and 3.3V bus connectors with different pinouts for maximum compatibility with devices and has built-in slots for an EEPROM and a real-time clock (RTC). Address decoding is performed by a GAL for easy reconfigurability (both GAL20 and GAL22 are supported).
 
 ## Assembly
 The PCF8584 and all the other chips can all be bought supercheap on AliExpress & similar sites. There are only a couple of other components, making this board very affordable to build for everyone.
 
 Be careful with the Q1/Q2 MOSFETs: these **MUST** be TN2106, get them from a reputable supplier. You can skip them if you are only interested in the 5V bus.
 
-JP1 sets the EEPROM to read-only mode when closed.
+JP1 sets the built-in EEPROM to read-only mode when closed.
 
 JP2 grounds pin 1 of the oscillator: most oscillators don't need this, so leave it open unless the datasheet of your oscillator says differently.
 
@@ -25,12 +25,12 @@ JP6 connects the PCF8584 IRQ signal to the system IRQ signal: these two work dif
 
 The battery is only needed by the RTC so that it keeps time while the board is unplugged. Speaking of the RTC, be careful if you get these from China as some of them just don't work at all.
 
-Many different EEPROM chips are supported in the built-in slots: just make sure that the pinout matches and adapt your software.
+Many different EEPROM chips are supported in the built-in slot: just make sure that the pinout matches and adapt your software.
 
 ## Programming
 The board is generic and can be used for a multitude of purposes, but in all cases you will have to write some software on the computer side in order to interact with the devices.
 
-The board exposes the two 8255 registers at $FE04/5. Interaction with these registers is a bit tricky and requires careful examination of the datasheet.
+The board exposes the two 8255 registers at $FE04/5. Interaction with these registers is a bit tricky and requires careful examination of the [datasheet](doc/PCF8584.pdf).
 
 Some example code for interaction with the board, RTC and EEPROM is provided on the [Wiki](https://github.com/SukkoPera/Plus42Wire/wiki).
 
