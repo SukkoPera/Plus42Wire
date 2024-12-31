@@ -1,0 +1,80 @@
+
+*******************************************************************************
+                                Plus42Wire_G20
+*******************************************************************************
+
+CUPL(WM)        5.0a Serial# 60008009
+Device          g20v8as  Library DLIB-h-40-1
+Created         Thu Sep 05 02:26:01 2024
+Name            Plus42Wire_G20
+Partno          TBD
+Revision        01
+Date            05/09/2024
+Designer        SukkoPera
+Company         OpenRetroWorks
+Assembly        None
+Location        France
+
+===============================================================================
+                            Expanded Product Terms
+===============================================================================
+
+_addressed =>
+    a2 & !a3 & !a4 & !a5 & !a6 & !a7 & !a8 & a9 & a10 & a11 & a12 & a13 & a14 & 
+      a15
+
+addr =>
+    a15 , a14 , a13 , a12 , a11 , a10 , a9 , a8 , a7 , a6 , a5 , a4 , a3 , a2
+
+cs8584 =>
+    a2 & !a3 & !a4 & !a5 & !a6 & !a7 & !a8 & a9 & a10 & a11 & a12 & a13 & a14 & 
+      a15
+
+rd8584 =>
+    a2 & !a3 & !a4 & !a5 & !a6 & !a7 & !a8 & a9 & a10 & a11 & a12 & a13 & a14 & 
+      a15 & ba & phi2 & rw
+
+wr8584 =>
+    a2 & !a3 & !a4 & !a5 & !a6 & !a7 & !a8 & a9 & a10 & a11 & a12 & a13 & a14 & 
+      a15 & phi2 & !rw
+
+
+===============================================================================
+                                 Symbol Table
+===============================================================================
+
+Pin Variable                                    Pterms   Max     Min    
+Pol   Name              Ext     Pin     Type     Used   Pterms  Level   
+--- --------            ---     ---     ----    ------  ------  -----   
+
+    _addressed                  0        I        1       -       -     
+    a0                          11       V        -       -       -     
+    a1                          14       V        -       -       -     
+    a2                          10       V        -       -       -     
+    a3                          15       V        -       -       -     
+    a4                          9        V        -       -       -     
+    a5                          16       V        -       -       -     
+    a6                          8        V        -       -       -     
+    a7                          17       V        -       -       -     
+    a8                          7        V        -       -       -     
+    a9                          6        V        -       -       -     
+    a10                         5        V        -       -       -     
+    a11                         4        V        -       -       -     
+    a12                         3        V        -       -       -     
+    a13                         21       V        -       -       -     
+    a14                         22       V        -       -       -     
+    a15                         1        V        -       -       -     
+    addr                        0        F        -       -       -     
+    ba                          2        V        -       -       -     
+    cs8584                      19       V        1       8       2     
+    phi2                        13       V        -       -       -     
+    rd8584                      18       V        1       8       2     
+    rw                          23       V        -       -       -     
+    wr8584                      20       V        1       8       2     
+
+
+LEGEND    D : default variable         F : field      G : group
+          I : intermediate variable    N : node       M : extended node
+          U : undefined                V : variable   X : extended variable
+          T : function
+

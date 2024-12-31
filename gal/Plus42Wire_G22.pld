@@ -1,0 +1,32 @@
+/* Plus42Wire GAL22 Equations
+ * Copyright 2024 SukkoPera <software@sukkology.net>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+Name Plus42Wire_G20;
+Partno TBD;
+Date 05/09/2024;
+Revision 01;
+Designer SukkoPera;
+Company OpenRetroWorks;
+Assembly None;
+Location France;
+Device g22v10;
+
+// GAL22V10
+// Inputs: 1-11, 13
+// Inputs/Outputs: 14-23
+
+$INCLUDE Plus42Wire_main.inc

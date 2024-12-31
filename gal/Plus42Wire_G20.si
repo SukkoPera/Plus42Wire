@@ -1,0 +1,68 @@
+/* Plus42Wire Simulation Input
+ * Copyright 2024 SukkoPera <software@sukkology.net>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+Name Plus42Wire_G20;
+Partno TBD;
+Date 05/09/2024;
+Revision 01;
+Designer SukkoPera;
+Company OpenRetroWorks;
+Assembly None;
+Location France;
+Device g20v8a;
+
+ORDER:
+/* IN  */ addr, rw, phi2, ba,
+/* OUT */ cs8255, rd8255, wr8255;
+
+VECTORS:
+/* Bad address */
+11111111111111 0 0 1 H H H
+11111111111111 0 1 1 H H H
+11111111111111 0 0 1 H H H
+11111111111111 0 1 1 H H H
+11111111111111 1 0 1 H H H
+11111111111111 1 1 1 H H H
+11111111111111 1 0 1 H H H
+11111111111111 1 1 1 H H H
+
+/* Right address but no phi2 */
+11111110000000 0 0 1 L H H
+11111110000000 1 0 1 L H H
+
+/* Right address, phi2 but no ba */
+11111110000000 0 0 0 L H H
+11111110000000 1 1 0 L H H
+11111110000000 0 1 0 L H L	/* BA doesn't matter for writes! */
+
+/* Simulate a 6502 write cycle */
+11111111111111 1 0 1 H H H	/* Start with some other address on the bus */
+11111110000000 1 0 1 L H H	/* Put our address on the bus => CS goes low immediately */
+11111110000000 0 0 1 L H H  /* R/W goes low, write cycle beginning */
+11111110000000 0 1 1 L H L	/* PHI2 goes high => WR goes low */
+/* CPU puts data on bus */
+11111110000000 0 0 1 L H H	/* PHI2 goes low, data is valid => WR goes high */
+11111110000000 1 0 1 L H H	/* R/W goes high, write cycle ends */
+11111111111111 1 0 1 H H H	/* Address changes => CS goes high */
+
+/* Simulate a 6502 read cycle */
+11111111111111 1 0 1 H H H	/* Start with some other address on the bus */
+11111110000000 1 0 1 L H H	/* Put our address on the bus => CS goes low immediately */
+/* R/W stays high */
+11111110000000 1 1 1 L L H	/* PHI2 goes high => RD goes low */
+11111110000000 1 0 1 L H H	/* PHI2 goes low => CPU samples data and cycle ends => RD goes high */
+11111111111111 1 0 1 H H H	/* Address changes => CS goes high */
