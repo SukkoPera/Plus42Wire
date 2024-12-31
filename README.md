@@ -8,7 +8,7 @@ I<sup>2</sup>C is a standard bus that is widely used for attaching lower-speed p
 
 Plus42Wire is based on the PCF8584 chips by Philips/NXP, featuring both master and slave capabilities and communication speeds up to 90 kHz.
 
-The board features boath 5V and a 3.3V bus connectors for maximum compatibility with devices and has built-in slots for an EEPROM and a Real-Time Clock (RTC). Address decoding is performed by a GAL for easy reconfigurability (both GAL20 and GAL22 are supported).
+The board features both 5V and 3.3V bus connectors with different pinouts for maximum compatibility with devices and has built-in slots for an EEPROM and a Real-Time Clock (RTC). Address decoding is performed by a GAL for easy reconfigurability (both GAL20 and GAL22 are supported).
 
 ## Assembly
 The PCF8584 and all the other chips can all be bought supercheap on AliExpress & similar sites. There are only a couple of other components, making this board very affordable to build for everyone.
@@ -22,6 +22,8 @@ JP2 grounds pin 1 of the oscillator: most oscillators don't need this, so leave 
 JP3/4/5 control the I<sup>2</sup>C address of the built-in EEPROM: most EEPROMs respond to 0x50 by default, but this address can be altered through these jumpers. Set them all to 0 to use the default.
 
 The battery is only needed by the RTC so that it keeps time while the board is unplugged. Speaking of the RTC, be careful if you get these from China as some of them just don't work at all.
+
+Many different EEPROM chips are supported in the built-in slots: just make sure that the pinout matches and adapt your software.
 
 ## Programming
 The board is generic and can be used for a multitude of purposes, but in all cases you will have to write some software on the computer side in order to interact with the devices.
@@ -52,3 +54,6 @@ Also, if you still have to register, [you can use this link](https://www.pcbway.
 You can also buy me a coffee if you want:
 
 <a href='https://ko-fi.com/L3L0U18L' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+## Thanks
+* Chequered Ink for the [Helicopta](https://www.fontspace.com/helicopta-font-f27740) font used in the logo.
