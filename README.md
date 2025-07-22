@@ -30,7 +30,7 @@ Many different EEPROM chips are supported in the built-in slot: just make sure t
 ## Programming
 The board is generic and can be used for a multitude of purposes, but in all cases you will have to write some software on the computer side in order to interact with the devices.
 
-The board exposes the two 8255 registers at $FE04/5. Interaction with these registers is a bit tricky and requires careful examination of the [datasheet](doc/PCF8584.pdf).
+The board exposes the two PCF8584 registers at $FE04/5. Interaction with these registers is a bit tricky and requires careful examination of the [datasheet](doc/PCF8584.pdf).
 
 Some example code for interaction with the board, RTC and EEPROM is provided on the [Wiki](https://github.com/SukkoPera/Plus42Wire/wiki).
 
